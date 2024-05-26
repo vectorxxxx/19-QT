@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>login.png</file>
+        <file>register.png</file>
+        <file>title.png</file>
+        <file>password.png</file>
+        <file>username.png</file>
+        <file>img/background.jpg</file>
+        <file>img/battery.png</file>
+        <file>img/curtain.png</file>
+        <file>img/feature.png</file>
+        <file>img/led.png</file>
+        <file>img/orientation.png</file>
+        <file>img/room.png</file>
+        <file>img/safety.png</file>
+        <file>img/scene.png</file>
+        <file>img/socket.png</file>
+        <file>img/tv.png</file>
+    </qresource>
+</RCC>
