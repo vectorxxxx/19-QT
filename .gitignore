@@ -1,0 +1,45 @@
+# Compiled Object files, Static and Dynamic libraries (Shared Object files)
+*.slo
+*.lo
+*.o
+*.obj
+
+# Qt-specific output
+Makefile
+Makefile.*
+*.pro.user
+*.pro.user.*
+*.qbs
+*.qbs.*
+*.moc
+*.moc_*
+moc_*.cpp
+moc_*.h
+
+# Generated files
+/.qmake.stash
+/.qmake.cache
+/.qmake.vars
+/.qmake.pro.user
+
+# Qt Creator files
+*.autosave
+*.creator_layout
+*.un~ # backups of files created by the QtCreator
+
+# CMake
+CMakeFiles
+Makefile
+cmake_install.cmake
+CMakeCache.txt
+/CMakeFiles
+/CMakeFiles/
+/CMakeFiles/*
+/CMakeScripts
+/CMakeScripts/*
+cmake-build-debug/
+
+# Output directories
+build/
+debug/
+release/
