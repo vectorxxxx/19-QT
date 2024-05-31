@@ -2,12 +2,11 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QMessageBox>
+#include <QTcpSocket>
 #include <QString>
-#include <QDebug>
-#include <QSqlTableModel>
+#include "mytcpserver.h"
+
+#define PORT        8888
 
 namespace Ui {
 class Widget;
@@ -21,15 +20,13 @@ public:
     explicit Widget(QWidget *parent = 0);
     ~Widget();
 
-private slots:
-    void on_queryPushButton_clicked();
-
-    void on_insertPushButton_clicked();
+public slots:
+    void readyReadSlot();
 
 private:
     Ui::Widget *ui;
-    QSqlDatabase db;
-    QSqlTableModel *model;
+    MyTCPServer *server;
+
 };
 
 #endif // WIDGET_H
