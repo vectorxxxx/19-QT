@@ -32,6 +32,11 @@ void Widget::on_connectButton_clicked()
     // 连接成功
     connect(socket, &QTcpSocket::connected, this, [this, IP, PORT](){
         QMessageBox::information(this, "提示", QString("TCP连接").append(IP).append(":").append(PORT).append("成功"));
+
+        // 跳转页面
+        this->hide();           // 隐藏当前页面
+        Chat *c = new Chat(socket);     // 堆中创建对象
+        c->show();              // 显示聊天页面
     });
 
     // 连接断开

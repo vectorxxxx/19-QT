@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include <QString>
+#include <mythread.h>
 
 #define PORT        8888
 
@@ -21,6 +23,10 @@ public:
 
 public slots:
     void newConnectionSlot();
+
+    void readyReadSlot();
+
+    void threadSlot(QByteArray ba);
 
 private:
     Ui::Widget *ui;

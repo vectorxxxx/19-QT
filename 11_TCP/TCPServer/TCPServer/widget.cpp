@@ -25,4 +25,25 @@ void Widget::newConnectionSlot()
 
     ui->ipEdit->setText(socket->peerAddress().toString());
     ui->portEdit->setText(QString::number(socket->peerPort()));
+
+    // 接受消息
+    // connect(socket, &QTcpSocket::readyRead, this, &Widget::readyReadSlot);
+
+    // 启动一个线程
+    myThread *mt = new myThread(socket);
+    mt->start();
+
+    // 接收线程中的自定义信号
+    connect(mt, &myThread::sendToWidget, this, &Widget::threadSlot);
+}
+
+void Widget::readyReadSlot()
+{
+    QTcpSocket *s = (QTcpSocket *)sender();
+    ui->receiveEdit->setText(QString(s->readAll()));
+}
+
+void Widget::threadSlot(QByteArray ba)
+{
+    ui->receiveEdit->setText(QString(ba));
 }

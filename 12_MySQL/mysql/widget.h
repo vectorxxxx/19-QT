@@ -2,10 +2,9 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include <QTcpSocket>
-#include <QHostAddress>
+#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QMessageBox>
-#include <chat.h>
 
 namespace Ui {
 class Widget;
@@ -20,15 +19,12 @@ public:
     ~Widget();
 
 private slots:
-    void on_cancelButton_clicked();
-
-    void on_connectButton_clicked();
+    void on_queryPushButton_clicked();
 
 private:
     Ui::Widget *ui;
+    QSqlDatabase db;
 
-    // 定义 QTcpSocket
-    QTcpSocket *socket;
 };
 
 #endif // WIDGET_H
